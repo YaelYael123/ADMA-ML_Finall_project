@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>Price predictor for assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+		label {
+		  display: block;
+		}
+       body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+        <h1>Price predictor for assets</h1>
+        <h2>Enter the asset data: </h2>
+        <form id="measurement-form"action="{{ url_for('predict')}}"method="post">
+			
+			<label for="City">City:</label>
+			<input type="text" id="City" name="feature"><br><br>
+			
+			<label for="type">Type:</label>
+			<input type="text" id="type" name="feature"><br><br>
+			
+			<label for="Area">Area:</label>
+			<input type="text" id="Area" name="feature"><br><br>
+			
+			<label for="Street">Street:</label>
+			<input type="text" id="Street" name="feature"><br><br>
+			
+			<label for="number_in_street">number in street:</label>
+			<input type="text" id="number_in_street" name="feature"><br><br>
+			
+			<label for="city_area">City area:</label>
+			<input type="text" id="city_area" name="feature"><br><br>
+			
+			<label for="floor">Floor:</label>
+			<input type="text" id="floor" name="feature"><br><br>
+			
+			<label for="num_of_images">Num of images:</label>
+			<input type="text" id="num_of_images" name="feature"><br><br>
+			
+			<label for="hasElevator ">Has elevator:</label>
+			<select id="hasElevator " name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+			
+			<label for="hasParking ">Has parking:</label>
+			<select id="hasParking " name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+			
+			<label for="hasBars">Has bars:</label>
+			<select id="hasBars" name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+
+			<label for="hasStorage">Has storage:</label>
+			<select id="hasStorage" name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+
+			<label for="condition ">Condition:</label>
+			<input type="text" id="condition " name="feature"><br><br>
+			
+			<label for="hasAirCondition">Has air condition:</label>
+			<select id="hasAirCondition" name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+
+			<label for="hasBalcony">Has balcony:</label>
+			<select id="hasBalcony" name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+
+			<label for="hasMamad">Has mamad:</label>
+			<select id="hasMamad" name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+
+			<label for="handicapFriendly">Handicap friendly:</label>
+			<select id="handicapFriendly" name="feature">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select><br><br>
+
+			<label for="entranceDate ">Entrance date:</label>
+			<input type="text" id="entranceDate " name="feature"><br><br>
+			
+			<label for="fruniture ">Fruniture:</label>
+			<input type="text" id="fruniture " name="feature"><br><br>
+			
+			<label for="publishedDays ">Published days:</label>
+			<input type="text" id="publishedDays " name="feature"><br><br>
+			
+			<button type="submit" class="btn btn-primary px-5" ">Predict price</button>	
+		</form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
